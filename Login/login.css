@@ -117,6 +117,7 @@ h3 {
     font-family: 'Poppins', sans-serif;
     right: 310px;
     top: 90px;
+    
 }
 
 #username {
@@ -128,6 +129,7 @@ h3 {
     height: 50px;
     width: 300px;
     border-radius: 15px;
+    padding:1rem;
 
    
     border: none;
@@ -149,7 +151,7 @@ input::placeholder {
     width: 300px;
     top: 270px;
     right: 100px;
-
+    padding:1rem;
     
     border: none;
     background-color: rgba(255, 255, 255, 0.9);
@@ -197,7 +199,7 @@ span {
     transition: 0.3s;
 }
 
-.submit:hover {
+.continue:hover {
     background-color: #00c8ff;
     color: #022f31;
 }
@@ -212,6 +214,9 @@ span {
     cursor: pointer;
     transition: 0.3s;
     padding:1rem;
+    border-radius: 15px;
+    width: 125px;
+    text-align: center;
 }
 
 .or{
@@ -226,7 +231,7 @@ span {
     border: 1px solid #022f31; 
     background-color: transparent; 
     font-family: 'Poppins', sans-serif;
-    top: 480px;
+    top: 490px;
     left: 200px; 
     font-size: 16px; 
     color: #022f31; 
@@ -234,6 +239,8 @@ span {
     padding: 8px 15px 8px 45px; 
     border-radius: 10px;
     transition: 0.3s;
+    
+
 }
 
 .google:hover {
@@ -244,7 +251,7 @@ span {
 .googleimg {
     position: absolute;
     height: 25px; 
-    top: 488px; 
+    top: 498px; 
     left: 212px; 
     cursor: pointer;
     z-index: 1; 
