@@ -1,73 +1,15 @@
-
 body {
-    position: relative;
     background-color: #67c6ad;
     font-family: 'Poppins', sans-serif;
     color: white;
-    
-   
     background: url("https://images.pexels.com/photos/593171/pexels-photo-593171.jpeg?cs=srgb&dl=pexels-taras-makarenko-188506-593171.jpg&fm=jpg");
-    background-size: cover; 
-    background-attachment: fixed; 
-    background-position: center; 
-}
-
-* {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    min-height: 100vh;
 }
-
-
-nav {
-    width: 80%;
-    background: #022f31;
-    padding: 15px 30px;
-    display: flex;
-    align-items: center;
-    margin: 20px auto;
-    border-radius: 20px;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding-right: 200px;
-    padding-left: 200px;
-    color: white;
-}
-
-li {
-    color: white;
-}
-
-.nav {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-}
-
-.nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    transition: 0.3s;
-}
-
-.nav a:hover,
-.nav #login:hover {
-    color: #00c8ff;
-    cursor: pointer;
-}
-
-#login {
-    position: relative;
-    right: -50px;
-    border-radius: 2px;
-    color: white;
-    width: 100px;
-}
-
 
 .letter {
     position: absolute;
@@ -80,7 +22,6 @@ li {
 h1, h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    color: #022f31;
 }
 
 h2 {
@@ -91,15 +32,10 @@ h2 {
     position: absolute;
     height: 600px;
     width: 500px;
-    
-    
-    background-color: rgba(255, 255, 255, 0.85); 
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     font-family: 'Poppins', sans-serif;
-    
-   
     color: #022f31;
-
     right: 100px;
     top: 150px;
 }
@@ -107,8 +43,7 @@ h2 {
 h3 {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    
-    padding-top: 40px; 
+    margin-top: 30px;
     font-size: 1.8rem;
 }
 
@@ -117,30 +52,28 @@ h3 {
     font-family: 'Poppins', sans-serif;
     right: 310px;
     top: 90px;
-    
+    font-weight: 600;
 }
 
 #username {
     position: absolute;
-    text-align: unset;
     font-family: 'Poppins', sans-serif;
     right: 100px;
     top: 130px;
     height: 50px;
     width: 300px;
     border-radius: 15px;
-    padding:1rem;
-
-   
     border: none;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #e2dddd;
+    padding-left: 15px;
 }
 
-input::placeholder {
-    color: #999;
-    padding-left: 20px;
-    position: relative;
-    top: 0px;
+.password {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    right: 315px;
+    top: 230px;
+    font-weight: 600;
 }
 
 #password {
@@ -151,288 +84,144 @@ input::placeholder {
     width: 300px;
     top: 270px;
     right: 100px;
-    padding:1rem;
-    
     border: none;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #e2dddd;
+    padding-left: 15px;
 }
 
-.password {
-    position: absolute;
-    font-family: 'Poppins', sans-serif;
-    right: 315px;
-    top: 230px;
-}
-
-#underline {
-    left: 259px;
-    text-decoration: underline;
-    cursor: pointer;
-    color: #022f31;
-}
-#underline:hover {
-    color: #00c8ff;
-}
-
-span {
+#nonunderline {
     position: absolute;
     top: 360px;
     left: 60px;
     font-size: 12px;
-    color: #555; 
+    color: #555;
 }
 
-.submit {
-    font-family: 'Poppins', sans-serif;
+#underline {
+    position: absolute;
+    top: 360px;
+    left: 265px;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #022f31;
+    font-weight: bold;
+}
+
+.continue {
     position: absolute;
     top: 410px;
     left: 200px;
     width: 100px;
     height: 40px;
     border-radius: 10px;
-    
-    
     background-color: #022f31;
     color: white;
     border: none;
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
     transition: 0.3s;
 }
 
-.continue:hover {
-    background-color: #00c8ff;
-    color: #022f31;
-}
-
-.continue{
-    position:absolute;
-    top:410px;
-    left:200px;
-    background-color: #022f31;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    padding:1rem;
-    border-radius: 15px;
-    width: 125px;
-    text-align: center;
-}
-
-.or{
-    
-    position:absolute;
-    top:460px;
-    left:250px;
+.or {
+    position: absolute;
+    top: 440px;
+    left: 240px;
+    font-size: 18px;
+    color: #555;
 }
 
 .google {
     position: absolute;
-    border: 1px solid #022f31; 
-    background-color: transparent; 
-    font-family: 'Poppins', sans-serif;
-    top: 490px;
-    left: 200px; 
-    font-size: 16px; 
-    color: #022f31; 
-    cursor: pointer;
-    padding: 8px 15px 8px 45px; 
-    border-radius: 10px;
-    transition: 0.3s;
-    
-
-}
-
-.google:hover {
-    background-color: #022f31;
-    color: white;
-}
-
-.googleimg {
-    position: absolute;
-    height: 25px; 
-    top: 498px; 
-    left: 212px; 
-    cursor: pointer;
-    z-index: 1; 
-}
-.end {
-    position: relative;
-    margin: 0;
-    width: 100%;
-    height: 200px;
-    background-color: #022f31;
-    margin-top: 50px;
-    
-}
-
-.conditions {
-    position: relative;
-    top: 40%;
-    left: 10px;
-    color: white;
-    font-weight: 100;
-    cursor: pointer;
-}
-
-
-/* 
-body{
-    background-color: #f6dcd2;
-    
-}
-
-.letter{
-    position: absolute;
-    top: 300px;
-    left: 100px;
-    
-    width: 850px;
-    
-
-}
-
-h1, h2 {
-    
-  font-family: poppins;
-  font-weight: bold;
-}
-
-h2{
-    font-weight: 350;
-}
-
-.loginbox{
-    position: absolute;
-    height: 600px;
-    width: 500px;
-    background-color: white;
-    border-radius: 15px;
-    font-family: poppins;
-
-    right: 100px;
-    top: 150px;
-    
-
-}
-h3{
-    
-    font-family: poppins;
-    text-align: center;
-    
-    
-
-}
-
-.usernamelabel{
-
-    position: absolute;
-    font-family: poppins;
-    right:310px;
-    top: 90px
-}
-
-#username{
-    position: absolute;
-    text-align:unset;
-    font-family: poppins;
-
-    right:100px;
-    top: 130px;
-    height: 50px;
-    width: 300px;
-    border-radius: 15px;
-
-
-
-
-}
-input::placeholder {
-  color: #999;              
-  padding-left: 20px;       
-  position: relative;
-  top: 0px;                 
-}
-
-#password{
-    position: absolute;
-    font-family: poppins;
-    border-radius: 15px;
-    height: 50px;
-    width: 300px;
-    top:270px;
-    right:100px;
-
-}
-
-.password{
-
-    position: absolute;
-    font-family: poppins;
-    right:315px;
-    top:230px;
-}
-
-
-#underline{
-    
-    left: 259px;
-    text-decoration: underline;
-    
-
-
-
-}
-
-span{
-    position: absolute;
-    top: 360px;
-    left: 60px;
-    font-size: 12px;
-    color: #999;
-}
-
-.submit{
-    font-family: poppins;
-    position: absolute;
-    top:410px;
+    top: 480px;
     left: 200px;
     width: 100px;
     height: 40px;
+    background-color: #022f31;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
     border-radius: 10px;
-    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
     color: white;
-    cursor: pointer;
-}
-
-.or{
-    position: absolute;
-    top:430px;
-    left:240px;
-    
-    font-size: 20px;
-}
-
-.google{
-    position: absolute;
     border: none;
-    background-color: white;
-    font-family: poppins;
-    top:480px;
-    left:225px;
+    transition: 0.3s;
+}
+
+.continue:hover, .google:hover {
+    background-color: #00c8ff;
+    color: #022f31;
+}
+
+.googleimg {
+    height: 18px;
+    width: auto;
+}
+
+@media (max-width: 1000px) {
+    body {
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .letter {
+        position: static;
+        width: 90%;
+        margin: 40px auto 20px auto;
+        text-align: center;
+        text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+    }
+
+    .letter h1 { font-size: 2.5rem; }
+    .letter h2 { font-size: 1.2rem; }
+
+    .loginbox {
+        position: relative;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        margin: 0 auto;
+        top: 0; 
+        right: 0;
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .usernamelabel, #username,
+    .password, #password,
+    #nonunderline, #underline,
+    .continue, .or, .google { 
+        position: static;
+        width: 100%;
+        text-align: left;
+        margin: 5px 0;
+    }
+
+    #username, #password {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    #nonunderline, #underline {
+        display: inline;
+        font-size: 11px;
+    }
     
-    font-size: 20;
-    cursor: pointer;
+    .continue, .google {
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
 
+    .or {
+        text-align: center;
+        margin: 10px 0;
+    }
 }
-
-.googleimg{
-    position: absolute;
-    height: 30px;
-    top:475px;
-    left:190px;
-    cursor: pointer;
-}
-
-
- */
