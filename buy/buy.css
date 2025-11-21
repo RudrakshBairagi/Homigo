@@ -1,4 +1,7 @@
 body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     position: relative;
     background-color: #67c6ad;
     font-family: 'Poppins', sans-serif;
@@ -16,31 +19,31 @@ body {
 }
 
 nav {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     background: #022f31;
-    padding: 15px 30px;
-    display: flex;
-    align-items: center;
+    padding: 15px 20px;
     margin: 20px auto;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    padding-right: 200px;
-    padding-left: 200px;
     color: white;
-}
-
-li {
-    color: white;
+    text-align: center;
 }
 
 .nav {
     display: flex;
-    gap: 40px;
+    gap: 20px;
     list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav a {
@@ -48,6 +51,7 @@ li {
     color: white;
     font-size: 1rem;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 .nav a:hover,
@@ -57,27 +61,22 @@ li {
 }
 
 #login {
-    position: relative;
-    right: -50px;
-    border-radius: 2px;
     color: white;
-    width: 100px;
+    font-weight: bold;
 }
 
 .filter-bar {
-    position: relative;
     background-color: #022f3193;
-    width: 80%;
-    margin: auto;
-    margin-top: 50px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
     border-radius: 10px;
     padding: 20px;
-    display: flex;
-    justify-content: center;
 }
 
 .filter-form {
     display: flex;
+    flex-direction: column;
     gap: 15px;
     align-items: center;
 }
@@ -87,27 +86,37 @@ li {
     border: none;
     border-radius: 15px;
     height: 45px;
-    width: 200px;
-    background-color: rgba(255, 255, 255, 0.789);
+    width: 100%;
+    max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     padding-left: 15px;
 }
 
 .filter-form .Search {
-    position: relative;
     font-family: 'Poppins', sans-serif;
     border: none;
     border-radius: 5px;
-    width: 60px;
-    top: 0;
+    width: 100%;
+    max-width: 100px;
     height: 45px;
+    background-color: #022f31;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.filter-form .Search:hover {
+    background-color: #00c8ff;
+    color: #022f31;
 }
 
 .property-grid-container {
-    width: 80%;
-    margin: auto;
-    margin-top: 50px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -116,11 +125,12 @@ li {
 }
 
 .property-card {
-    background-color: rgba(255, 255, 255, 0.55);
-    width: 350px;
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 100%; 
+    max-width: 350px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     color: black;
@@ -130,10 +140,6 @@ li {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    position: static;
-    right: 0;
-    top: 0;
-    border-radius: 15px 15px 0 0;
 }
 
 .card-content {
@@ -170,23 +176,17 @@ li {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #504f4f;
-}
-
-.features span img {
-    width: 20px;
-    height: 20px;
+    font-weight: 500;
 }
 
 .property-card .look {
-    padding-top: 0;
-    margin-left: 0;
-    height: auto;
+    width: 100%;
+    padding: 12px;
     font-family: 'Poppins', sans-serif;
     background-color: #022f31;
     color: white;
-    padding: 10px 15px;
     border-radius: 8px;
     text-align: center;
     font-weight: 700;
@@ -202,19 +202,42 @@ li {
 }
 
 .end {
-    position: relative;
-    margin: 0;
     width: 100%;
-    height: 200px;
     background-color: #022f31;
+    padding: 40px 20px;
     margin-top: 50px;
+    text-align: center;
 }
 
 .conditions {
-    position: relative;
-    top: 40%;
-    left: 10px;
     color: white;
     font-weight: 100;
+    font-size: 0.9rem;
     cursor: pointer;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .nav {
+        gap: 40px;
+    }
+
+    .filter-form {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .filter-form input,
+    .filter-form select {
+        width: 200px;
+    }
+    
+    .filter-form .Search {
+        width: 80px;
+    }
 }
