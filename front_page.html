@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>My Recipes</title>
+</head>
+<body style="background-color: #f0f0f0; font-family: Arial;">
+
+    <h1>Food List</h1>
+    
+    <div id="cards"></div>
+
+    <script>
+        
+        var key = "37aaa039bba44039ba25b09471aae6c8";
+        
+       
+        var myUrl = "https://api.spoonacular.com/recipes/random?number=10&apiKey=" + key;
+
+        
+        fetch(myUrl)
+          .then(function(response) {
+            return response.json(); 
+          })
+          .then(function(data) {
+            console.log(data); 
+            
+            var allRecipes = data.recipes;
+            var box = document.getElementById("cards");
+
+            
+            for(var i = 0; i < allRecipes.length; i++) {
+              var currentRecipe = allRecipes[i];
+              
+             
+              var cardDiv = document.createElement("div");
+              
+             
+              cardDiv.style.border = "2px solid black";
+              cardDiv.style.margin = "10px";
+              cardDiv.style.padding = "10px";
+              cardDiv.style.backgroundColor = "white";
+              cardDiv.style.width = "250px";
+              cardDiv.style.display = "inline-block"; 
+              cardDiv.style.verticalAlign = "top";
+
+             
+              var cardHtml = "";
+              cardHtml = cardHtml + "<h3>" + currentRecipe.title + "</h3>";
+              cardHtml = cardHtml + "<img src='" + currentRecipe.image + "' width='100%'>";
+              cardHtml = cardHtml + "<p>Time to make: " + currentRecipe.readyInMinutes + " minutes</p>";
+              cardHtml = cardHtml + "<a href='" + currentRecipe.sourceUrl + "' target='_blank'>Click here for recipe</a>";
+
+              
+              cardDiv.innerHTML = cardHtml;
+              
+             
+              box.appendChild(cardDiv);
+            }
+          })
+          .catch(function(error) {
+            
+            alert("Something went wrong!");
+          });
+    </script>
+
+</body>
+</html>
