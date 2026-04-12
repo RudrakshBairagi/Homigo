@@ -69,7 +69,7 @@ function App() {
   return (
     <>
       <TopNav currentView={currentView} onViewChange={setCurrentView} />
-      <main>
+      <main className="pt-32">
         {currentView === 'home' && <Search onSearch={handleSearch} />}
 
         {/* Loading animation removed */}
