@@ -1,3 +1,4 @@
+import './CardsList.css';
 import Card from './Card';
 
 function CardsList({ recipes, query, likedRecipes = [], onToggleLike }) {

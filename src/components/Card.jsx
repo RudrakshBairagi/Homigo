@@ -1,6 +1,9 @@
+import './Card.css';
+
 function Card({ recipe, index, isLiked, onToggleLike }) {
   const { title, image, readyInMinutes, servings, sourceUrl } = recipe;
 
+  return (
     <article
       className="food-card"
       id={`recipe-card-${index}`}

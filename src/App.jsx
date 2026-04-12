@@ -1,3 +1,4 @@
+import './App.css';
 import { useState, useEffect } from 'react';
 import TopNav from './components/TopNav';
 import Search from './components/Search';
@@ -32,15 +33,13 @@ function App() {
     });
   };
 
-  // Load trending / random recipes on first visit
   useEffect(() => {
     async function loadInitial() {
       setLoading(true);
       try {
         const data = await getRandomRecipes(9);
         setRecipes(data);
-      } catch {
-        // Silently fail — user can still search
+      } catch (err) {
       } finally {
         setLoading(false);
       }
@@ -72,7 +71,7 @@ function App() {
       <main className="main-layout">
         {currentView === 'home' && <Search onSearch={handleSearch} />}
 
-        {/* Loading animation removed */}
+
 
         {currentView === 'home' && error && (
           <div className="error-box text-center">
@@ -123,7 +122,7 @@ function App() {
       <footer className="page-footer mt-xl">
         <div className="container footer-content text-center">
           <p>
-            {/* Footer empty as requested */}
+
           </p>
         </div>
       </footer>

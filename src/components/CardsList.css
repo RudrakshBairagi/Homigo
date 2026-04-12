@@ -1,0 +1,11 @@
+
+.results-section { padding: var(--space-2xl) var(--space-lg); max-width: 1280px; margin: 0 auto; }
+.results-header { margin-bottom: var(--space-2xl); }
+.results-title { font-size: 2.25rem; color: var(--color-text-primary); margin: 0;}
+.results-count { color: var(--color-text-muted); margin-top: var(--space-sm); font-weight: 300; }
+.grid-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-xl); }
+
+
+@media (min-width: 768px) {
+  .grid-layout { grid-template-columns: repeat(3, 1fr); }
+}

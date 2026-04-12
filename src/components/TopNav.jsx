@@ -1,3 +1,5 @@
+import './TopNav.css';
+
 function TopNav({ currentView, onViewChange }) {
   return (
     <nav className="navbar">

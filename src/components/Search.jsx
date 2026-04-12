@@ -1,3 +1,5 @@
+import './Search.css';
+
 const SUGGESTIONS = ['Pasta', 'Chicken', 'Salad', 'Dessert', 'Vegan', 'Soup', 'Indian'];
 
 function Search({ onSearch }) {
@@ -17,9 +19,6 @@ function Search({ onSearch }) {
     <section className="hero-section" id="hero-section">
       <div className="hero-grid">
         <div className="hero-content">
-          <span className="hero-badge">
-            ✨ Powered by Spoonacular
-          </span>
           <h1 className="hero-title">
             Find Your Next <br />Favourite Recipe
           </h1>
