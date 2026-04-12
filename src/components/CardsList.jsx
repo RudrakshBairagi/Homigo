@@ -2,22 +2,22 @@ import Card from './Card';
 
 function CardsList({ recipes, query }) {
   return (
-    <section className="results" id="results-section">
-      <div className="container">
-        <div className="results__header">
-          <h2 className="results__title">
-            {query ? `Results for "${query}"` : 'Trending Recipes'}
+    <section className="py-24 max-w-7xl mx-auto px-6" id="results-section">
+      <div className="flex justify-between items-end mb-12">
+        <div>
+          <h2 className="text-4xl font-headline text-on-surface">
+            {query ? `Results for "${query}"` : 'Trending Now'}
           </h2>
-          <span className="results__count">
+          <p className="text-on-surface/60 mt-2 font-light">
             {recipes.length} recipe{recipes.length !== 1 ? 's' : ''} found
-          </span>
+          </p>
         </div>
+      </div>
 
-        <div className="recipe-grid">
-          {recipes.map((recipe, i) => (
-            <Card key={recipe.id} recipe={recipe} index={i} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {recipes.map((recipe, i) => (
+          <Card key={recipe.id} recipe={recipe} index={i} />
+        ))}
       </div>
     </section>
   );
