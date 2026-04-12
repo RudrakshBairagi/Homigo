@@ -76,7 +76,7 @@ function App() {
 
 
         {currentView === 'home' && error && (
-          <div className="error-box text-center">
+          <div className="error-box">
             <p className="error-icon">⚠️</p>
             <p className="error-message">{error}</p>
           </div>
@@ -92,7 +92,7 @@ function App() {
         )}
 
         {currentView === 'home' && !loading && !error && hasSearched && recipes.length === 0 && (
-          <div className="empty-box text-center">
+          <div className="empty-box">
             <p className="empty-icon">🍽️</p>
             <h3 className="empty-title">No recipes found</h3>
             <p className="empty-message">
@@ -111,7 +111,7 @@ function App() {
         )}
 
         {currentView === 'liked' && likedRecipes.length === 0 && (
-          <div className="empty-box text-center mt-lg">
+          <div className="empty-box fav-empty-box">
             <p className="empty-icon">🤍</p>
             <h3 className="empty-title">No favorites yet</h3>
             <p className="empty-message">
@@ -125,8 +125,8 @@ function App() {
         )}
       </main>
 
-      <footer className="page-footer mt-xl">
-        <div className="container footer-content text-center">
+      <footer className="page-footer">
+        <div className="container footer-content">
           <p>
 
           </p>

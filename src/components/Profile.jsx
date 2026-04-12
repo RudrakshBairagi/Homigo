@@ -2,11 +2,11 @@ import './Profile.css';
 
 function Profile({ likedRecipesCount }) {
   return (
-    <section className="profile-dashboard container mx-auto">
+    <section className="profile-dashboard container">
       {/* Hero Banner */}
       <div className="profile-hero">
-        <div className="profile-hero__bg-blob blob-left"></div>
-        <div className="profile-hero__bg-blob blob-right"></div>
+        <div className="bg-blob blob-left"></div>
+        <div className="bg-blob blob-right"></div>
         
         <div className="profile-glassy-card">
           <div className="profile-avatar-container">
@@ -19,7 +19,7 @@ function Profile({ likedRecipesCount }) {
           <h2 className="profile-name">Rudraksh Bairagi</h2>
           <p className="profile-bio">Culinary Explorer & Pasta Enthusiast</p>
           <div className="profile-date">
-            <span className="material-symbols-outlined text-sm">calendar_month</span> 
+            <span className="material-symbols-outlined date-icon">calendar_month</span> 
             Joined April 2026
           </div>
         </div>

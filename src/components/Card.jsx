@@ -27,10 +27,10 @@ function Card({ recipe, index, isLiked, onToggleLike }) {
       <div className="card-details">
         <div className="card-stats">
           <span className="stat-item">
-            <span className="material-symbols-outlined text-sm">schedule</span> {readyInMinutes || 'N/A'} min
+            <span className="material-symbols-outlined stat-icon">schedule</span> {readyInMinutes || 'N/A'} min
           </span>
           <span className="stat-item">
-            <span className="material-symbols-outlined text-sm">signal_cellular_alt</span> {servings || 'N/A'} servings
+            <span className="material-symbols-outlined stat-icon">signal_cellular_alt</span> {servings || 'N/A'} servings
           </span>
         </div>
         
@@ -45,7 +45,7 @@ function Card({ recipe, index, isLiked, onToggleLike }) {
             rel="noopener noreferrer"
             className="recipe-link"
           >
-            View Full Recipe <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+            View Full Recipe <span className="material-symbols-outlined link-icon">open_in_new</span>
           </a>
         )}
       </div>

@@ -37,7 +37,7 @@ function Search({ onSearch }) {
               autoComplete="off"
             />
             <button className="search-button" type="submit" id="search-button">
-              <span className="material-symbols-outlined text-[18px]">search</span>
+              <span className="material-symbols-outlined search-icon">search</span>
               Search
             </button>
           </form>

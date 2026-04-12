@@ -4,12 +4,12 @@ import Card from './Card';
 function CardsList({ recipes, query, likedRecipes = [], onToggleLike }) {
   return (
     <section className="results-section" id="results-section">
-      <div className="results-header mb-12">
+      <div className="results-header">
         <div>
           <h2 className="results-title">
             {query === 'Favorites' ? 'Your Cookbook' : (query ? `Results for "${query}"` : 'Trending Now')}
           </h2>
-          <p className="results-count mt-2 font-light">
+          <p className="results-count">
             {recipes.length} recipe{recipes.length !== 1 ? 's' : ''} {query === 'Favorites' ? 'saved' : 'found'}
           </p>
         </div>

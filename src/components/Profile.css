@@ -12,7 +12,7 @@
   margin-bottom: var(--space-2xl);
 }
 
-.profile-hero__bg-blob {
+.bg-blob {
   position: absolute;
   z-index: -10;
   opacity: 0.6;
