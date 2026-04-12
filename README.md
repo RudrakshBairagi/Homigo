@@ -1,4 +1,5 @@
 # Homigo
+🚀 **Live Demo:** [https://homigo-one.vercel.app/](https://homigo-one.vercel.app/)
 
 Hey! Welcome to Homigo, my front-end recipe explorer app built for my semester 2 project. 
 
