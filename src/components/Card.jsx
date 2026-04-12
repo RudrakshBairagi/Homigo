@@ -1,4 +1,4 @@
-function Card({ recipe, index }) {
+function Card({ recipe, index, isLiked, onToggleLike }) {
   const { title, image, readyInMinutes, servings, sourceUrl } = recipe;
 
   return (
@@ -15,8 +15,12 @@ function Card({ recipe, index }) {
           src={image}
           loading="lazy"
         />
-        <button className="absolute top-4 right-4 w-10 h-10 bg-surface/90 backdrop-blur rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors">
-          <span className="material-symbols-outlined">favorite</span>
+        <button 
+          className="absolute top-4 right-4 w-10 h-10 bg-surface/90 backdrop-blur rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors cursor-pointer"
+          onClick={() => onToggleLike && onToggleLike(recipe)}
+          type="button"
+        >
+          <span className="material-symbols-outlined" style={{ fontVariationSettings: isLiked ? "'FILL' 1" : "'FILL' 0" }}>favorite</span>
         </button>
       </div>
       

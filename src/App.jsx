@@ -12,6 +12,26 @@ function App() {
   const [error, setError] = useState(null);
   const [hasSearched, setHasSearched] = useState(false);
 
+  const [currentView, setCurrentView] = useState('home');
+  const [likedRecipes, setLikedRecipes] = useState(() => {
+    const saved = localStorage.getItem('homigo_liked');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('homigo_liked', JSON.stringify(likedRecipes));
+  }, [likedRecipes]);
+
+  const handleToggleLike = (recipe) => {
+    setLikedRecipes(prev => {
+      const isAlreadyLiked = prev.some(r => r.id === recipe.id);
+      if (isAlreadyLiked) {
+        return prev.filter(r => r.id !== recipe.id);
+      }
+      return [...prev, recipe];
+    });
+  };
+
   // Load trending / random recipes on first visit
   useEffect(() => {
     async function loadInitial() {
@@ -48,29 +68,53 @@ function App() {
 
   return (
     <>
-      <TopNav />
+      <TopNav currentView={currentView} onViewChange={setCurrentView} />
       <main>
-        <Search onSearch={handleSearch} />
+        {currentView === 'home' && <Search onSearch={handleSearch} />}
 
         {/* Loading animation removed */}
 
-        {error && (
+        {currentView === 'home' && error && (
           <div className="error-state container">
             <p className="error-state__icon">⚠️</p>
             <p className="error-state__text">{error}</p>
           </div>
         )}
 
-        {!loading && !error && recipes.length > 0 && (
-          <CardsList recipes={recipes} query={hasSearched ? query : ''} />
+        {currentView === 'home' && !loading && !error && recipes.length > 0 && (
+          <CardsList 
+            recipes={recipes} 
+            query={hasSearched ? query : ''} 
+            likedRecipes={likedRecipes}
+            onToggleLike={handleToggleLike}
+          />
         )}
 
-        {!loading && !error && hasSearched && recipes.length === 0 && (
+        {currentView === 'home' && !loading && !error && hasSearched && recipes.length === 0 && (
           <div className="empty-state">
             <p className="empty-state__icon">🍽️</p>
             <h3 className="empty-state__title">No recipes found</h3>
             <p className="empty-state__text">
               Try searching with different keywords or browse our suggestions above.
+            </p>
+          </div>
+        )}
+
+        {currentView === 'liked' && (
+          <CardsList 
+            recipes={likedRecipes} 
+            query="Favorites" 
+            likedRecipes={likedRecipes}
+            onToggleLike={handleToggleLike}
+          />
+        )}
+
+        {currentView === 'liked' && likedRecipes.length === 0 && (
+          <div className="empty-state mt-24">
+            <p className="empty-state__icon">🤍</p>
+            <h3 className="empty-state__title">No favorites yet</h3>
+            <p className="empty-state__text">
+              Hit the heart icon on any recipe to save it for later!
             </p>
           </div>
         )}
