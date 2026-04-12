@@ -69,15 +69,15 @@ function App() {
   return (
     <>
       <TopNav currentView={currentView} onViewChange={setCurrentView} />
-      <main className="pt-32">
+      <main className="main-layout">
         {currentView === 'home' && <Search onSearch={handleSearch} />}
 
         {/* Loading animation removed */}
 
         {currentView === 'home' && error && (
-          <div className="error-state container">
-            <p className="error-state__icon">⚠️</p>
-            <p className="error-state__text">{error}</p>
+          <div className="error-box text-center">
+            <p className="error-icon">⚠️</p>
+            <p className="error-message">{error}</p>
           </div>
         )}
 
@@ -91,10 +91,10 @@ function App() {
         )}
 
         {currentView === 'home' && !loading && !error && hasSearched && recipes.length === 0 && (
-          <div className="empty-state">
-            <p className="empty-state__icon">🍽️</p>
-            <h3 className="empty-state__title">No recipes found</h3>
-            <p className="empty-state__text">
+          <div className="empty-box text-center">
+            <p className="empty-icon">🍽️</p>
+            <h3 className="empty-title">No recipes found</h3>
+            <p className="empty-message">
               Try searching with different keywords or browse our suggestions above.
             </p>
           </div>
@@ -110,18 +110,18 @@ function App() {
         )}
 
         {currentView === 'liked' && likedRecipes.length === 0 && (
-          <div className="empty-state mt-24">
-            <p className="empty-state__icon">🤍</p>
-            <h3 className="empty-state__title">No favorites yet</h3>
-            <p className="empty-state__text">
+          <div className="empty-box text-center mt-lg">
+            <p className="empty-icon">🤍</p>
+            <h3 className="empty-title">No favorites yet</h3>
+            <p className="empty-message">
               Hit the heart icon on any recipe to save it for later!
             </p>
           </div>
         )}
       </main>
 
-      <footer className="footer">
-        <div className="container">
+      <footer className="page-footer mt-xl">
+        <div className="container footer-content text-center">
           <p>
             {/* Footer empty as requested */}
           </p>

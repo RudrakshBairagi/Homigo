@@ -2,19 +2,19 @@ import Card from './Card';
 
 function CardsList({ recipes, query, likedRecipes = [], onToggleLike }) {
   return (
-    <section className="py-24 max-w-7xl mx-auto px-6" id="results-section">
-      <div className="flex justify-between items-end mb-12">
+    <section className="results-section" id="results-section">
+      <div className="results-header mb-12">
         <div>
-          <h2 className="text-4xl font-headline text-on-surface">
+          <h2 className="results-title">
             {query === 'Favorites' ? 'Your Cookbook' : (query ? `Results for "${query}"` : 'Trending Now')}
           </h2>
-          <p className="text-on-surface/60 mt-2 font-light">
+          <p className="results-count mt-2 font-light">
             {recipes.length} recipe{recipes.length !== 1 ? 's' : ''} {query === 'Favorites' ? 'saved' : 'found'}
           </p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid-layout">
         {recipes.map((recipe, i) => {
           const isLiked = likedRecipes.some(r => r.id === recipe.id);
           return (
