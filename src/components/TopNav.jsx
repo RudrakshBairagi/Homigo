@@ -5,7 +5,7 @@ function TopNav({ currentView, onViewChange }) {
     <nav className="navbar">
       <div className="nav-logo" onClick={() => onViewChange('home')}>
         <span className="nav-text">
-          Culinary Canvas
+          Homigo
         </span>
       </div>
       <div className="nav-links">
@@ -32,8 +32,11 @@ function TopNav({ currentView, onViewChange }) {
         >
           <span className="material-symbols-outlined" style={{ fontVariationSettings: currentView === 'liked' ? "'FILL' 1" : "'FILL' 0" }}>favorite</span>
         </button>
-        <button className="nav-button">
-          <span className="material-symbols-outlined">account_circle</span>
+        <button 
+          className="nav-button"
+          onClick={() => onViewChange(currentView === 'profile' ? 'home' : 'profile')}
+        >
+          <span className="material-symbols-outlined" style={{ fontVariationSettings: currentView === 'profile' ? "'FILL' 1" : "'FILL' 0" }}>account_circle</span>
         </button>
       </div>
     </nav>

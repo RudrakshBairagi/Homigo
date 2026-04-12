@@ -6,6 +6,8 @@ import CardsList from './components/CardsList';
 import Loading from './components/Loading';
 import { searchRecipes, getRandomRecipes } from './services/api';
 
+import Profile from './components/Profile';
+
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState('');
@@ -116,6 +118,10 @@ function App() {
               Hit the heart icon on any recipe to save it for later!
             </p>
           </div>
+        )}
+
+        {currentView === 'profile' && (
+          <Profile likedRecipesCount={likedRecipes.length} />
         )}
       </main>
 
